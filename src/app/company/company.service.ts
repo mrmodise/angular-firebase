@@ -15,12 +15,12 @@ export class CompanyService {
 
   saveCompany(company) {
     const comp = this.db.object('company');
-    comp.set({name: company}).then(console.log).catch(console.log);
+    comp.set(company).then(console.log).catch(console.log);
   }
 
   editCompany(company) {
     const comp = this.db.object('company');
-    comp.update({name: company}).then(console.log).catch(console.log);
+    comp.update(company).then(console.log).catch(console.log);
   }
 
   removeCompany() {

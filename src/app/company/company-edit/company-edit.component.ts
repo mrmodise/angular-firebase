@@ -12,7 +12,7 @@ export class CompanyEditComponent implements OnInit {
 
   constructor(private companyService: CompanyService) {
     this.company$ = this.companyService.company$;
-    console.log(`Company is ${this.company$}`);
+    console.log(`Company is ${JSON.stringify(this.company$)}`);
   }
 
   ngOnInit() {
