@@ -11,7 +11,7 @@ import {Observable, of} from 'rxjs';
 export class CompanyEditComponent implements OnInit {
   companyKey: string;
   private isNewCompany: boolean;
-  private company$: Observable<any>;
+  company$: Observable<any>;
 
   constructor(private companyService: CompanyService,
               private activateRoute: ActivatedRoute,
