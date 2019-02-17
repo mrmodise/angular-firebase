@@ -10,8 +10,8 @@ import {Observable, of} from 'rxjs';
 })
 export class CompanyEditComponent implements OnInit {
   companyKey: string;
-  private isNewCompany: boolean;
   company$: Observable<any>;
+  private isNewCompany: boolean;
 
   constructor(private companyService: CompanyService,
               private activateRoute: ActivatedRoute,
@@ -31,11 +31,9 @@ export class CompanyEditComponent implements OnInit {
   }
 
   saveCompany(company) {
-    this.companyService.saveCompanyList(company);
-  }
-
-  editCompany(company) {
-    this.companyService.editCompanyList(company);
+    this.isNewCompany ?
+      this.companyService.saveCompanyList(company) :
+      this.companyService.editCompanyList(this.companyKey, company);
   }
 
   removeCompany() {

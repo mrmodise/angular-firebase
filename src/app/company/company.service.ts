@@ -53,8 +53,8 @@ export class CompanyService {
     this.companies$.push(company).then(console.log).catch(console.log);
   }
 
-  editCompanyList(company: Company) {
-    this.companies$.update(company.name, company).then(console.log).catch(console.log);
+  editCompanyList(key: string, company: Company) {
+    this.companies$.update(key, company).then(console.log).catch(console.log);
   }
 
 }
