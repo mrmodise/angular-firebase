@@ -33,8 +33,8 @@ export class CompanyService {
     comp.update(company).then(console.log).catch(console.log);
   }
 
-  removeCompany() {
-    const comp = this.db.object('company');
+  removeCompany(key: string) {
+    const comp = this.db.object(`companies/${key}`);
     comp.remove().then(console.log).catch(console.log);
   }
 

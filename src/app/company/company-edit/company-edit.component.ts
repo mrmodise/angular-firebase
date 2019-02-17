@@ -37,6 +37,6 @@ export class CompanyEditComponent implements OnInit {
   }
 
   removeCompany() {
-    this.companyService.removeCompany();
+    this.companyService.removeCompany(this.companyKey);
   }
 }
