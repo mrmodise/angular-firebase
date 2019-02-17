@@ -12,6 +12,7 @@ export class CompanyEditComponent implements OnInit {
 
   constructor(private companyService: CompanyService) {
     this.company$ = this.companyService.company$;
+    console.log(`Company is ${this.company$}`);
   }
 
   ngOnInit() {
@@ -25,7 +26,7 @@ export class CompanyEditComponent implements OnInit {
     this.companyService.editCompany(company);
   }
 
-  removeCompany(company) {
-    this.companyService.removeCompany(company);
+  removeCompany() {
+    this.companyService.removeCompany();
   }
 }
