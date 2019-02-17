@@ -35,7 +35,7 @@ export class CompanyService {
 
   removeCompany(key: string) {
     const comp = this.db.object(`companies/${key}`);
-    comp.remove().then(console.log).catch(console.log);
+    return comp.remove().then(console.log).catch(console.log);
   }
 
   /*----------- LISTS ---------------*/
@@ -50,11 +50,11 @@ export class CompanyService {
   }
 
   saveCompanyList(company: Company) {
-    this.companies$.push(company).then(console.log).catch(console.log);
+    return this.companies$.push(company).then(console.log).catch(console.log);
   }
 
   editCompanyList(key: string, company: Company) {
-    this.companies$.update(key, company).then(console.log).catch(console.log);
+    return this.companies$.update(key, company).then(console.log).catch(console.log);
   }
 
 }
